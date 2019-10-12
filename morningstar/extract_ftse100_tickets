@@ -1,0 +1,2011 @@
+	
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	            <title>		 London Stock Exchange
+</title>
+			 	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /><meta http-equiv="content-language" content="en-US" />			
+		<meta name="cws_cleaned_title" content="" />
+			
+			
+		
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />	
+	
+	<link rel="shortcut icon" href="/media/img/favicon.ico" type="images/x-icon" />
+			<link rel="stylesheet" href="/media/css/lse.bundle.min.css" type="text/css" media="all" />
+	
+	<!--[if IE]><link rel="stylesheet" href="/media/css/lse.iefix.css" type="text/css" media="screen,print" /><![endif]--> 
+	<link rel="stylesheet" href="/media/css/lse.print.css" type="text/css" media="print" />
+
+	<script type="text/javascript" src="/exchange/dwr/engine.js"></script>
+	<script type="text/javascript" src="/exchange/dwr/util.js"></script>
+	<script type="text/javascript" src="/exchange/dwr/interface/SsoUtility.js"></script>
+            <script type="text/javascript" src="/media/js/lse.bundle.min.js"></script>
+            
+	<!-- Sliderkit -->
+	<script type="text/javascript" src="/media/js/jquery/sliderkit/jquery.sliderkit.pack.js"></script>
+    
+	</head>
+
+<body>	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5J263Q" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-5J263Q');
+	</script>
+	<!-- End Google Tag Manager -->
+	<!-- banner tag -->
+	<div class="bannerTag">	</div>
+
+
+<!-- con autorefresh -->	<!-- start container - start page -->
+		<!-- disclaimer AcceptCookie -->				
+				<div id="bannerCookies" class="disclaimerCookies">
+				<form id="mainform" method="get" name="mainform" action=""><!-- action="/exchange/prices-and-markets/stocks/indices/constituents-indices.html" -->
+					<div class="disclaimerCookies-main">
+						<div class="disclaimerCookies-ico"><img height="45" src="/media/img/rebranding/ico-cookies.gif"></div>
+						<div class="disclaimerCookies-txt">
+							The London Stock Exchange uses cookies to improve its website. The cookies for analytical purposes have already been set. For more details and how to manage cookies, please see <a href="/global/legal/privacy-policy.htm">our privacy and cookies policy</a>. 
+							<!--
+							<div id="txtAcceptCookie" style="display:none;float:left;">You must tick the 'I accept cookies from this site' box to accept.</div>
+							<input id="chkAcceptCookie" type="checkbox" onclick="return clickButton(event,'btnAcceptCookie');" name="chkAcceptCookie">
+							<label for="chkAcceptCookie">By checking this box I accept cookies from this site</label>
+							-->
+						</div>
+						<div class="disclaimerCookies-button">
+							<input id="btnAcceptCookie" type="image" src="/media/img/rebranding/cookies-continue.gif" onClick="return createAcceptCookie();" name="btnAcceptCookie" value="Confirm">
+						</div>
+					</div>
+				</form>
+				</div>
+					
+				<script type="text/javascript" language="javascript">
+					//document.getElementById("chkAcceptCookie").checked == false;
+					getCookie();
+					if (!navigator.cookieEnabled) {
+						var bannerCookies = document.getElementById("bannerCookies");
+						bannerCookies.style.display = "none";
+					}
+				</script>
+							<!-- start login container -->  	
+	<div class="lse_login">
+		<div class="login_main">
+		
+			<!-- Logout block -->			<div id="userloginBlock">
+				<div id="userlogin">	
+					<div class="txt" id="userInData"></div>
+					<div class="separatorTop"></div>	
+					<div class="txt"><a href="/exchange/portfolio/accessPortfolio.html" title="View Portfolio">View Portfolio</a></div>	
+					<div class="separatorTop"></div>	
+					<div class="btn-account standard-button"><a href="/global/sso/myaccount.htm" title="My Account" rel="nofollow" role="button">My Account</a></div>
+					<div class="btn-signout standard-button"><a href="/exchange/user/logout.html?logoutSuccessUrl=/home/homepage.htm" id="signoutLink" title="Sign Out" rel="nofollow" role="button">Sign Out</a></div>
+				</div>
+			</div>
+	
+			<!-- Login block -->
+			<div id="userlogoutBlock">		
+				<div id="userlogout">
+					<div id="loginTopBar_wrapper">
+						<!-- Register  -->
+						<div class="registration"><a href="/exchange/user/registration.html" title="Registration" rel="nofollow">NEW USER? REGISTER HERE</a></div>
+						<!-- login -->
+						<div class="login">
+							<div class="login_text">LOGIN</div>
+						</div>
+						<div class="login_on">LOGIN</div>
+					
+						<div class="login_layer">
+							<div class="login_form">
+							
+								<form action="/exchange/j_spring_security_check" method="post" name="loginTopBar" id="loginTopBar" onSubmit="return validatelogin();">
+									<input type="hidden" name="fromUrl" value="/exchange/prices-and-markets/stocks/indices/constituents-indices.html"/>
+									<input type="text" name="j_username" id="j_username" class="login_input" onBlur="if(this.value==''){this.value='Username';}" onFocus="if(this.value=='Username'){this.value='';}" value="Username" />
+									<div class="input_password">
+										<input type="password" name="j_password" id="j_password" class="login_input" onBlur="pwd2txt(this,'txt')" onFocus="txt2pwd(document.getElementById('txt'),'j_password')" value=""  />
+										<input type="text" name="passwordTxt" id="txt" class="login_input" onfocus="this.blur()" onClick="txt2pwd(this,'j_password')" value="Password"  />
+									</div>
+									<input type="submit" title="Go to Login" alt="Go to Login" value="GO" id="LoginButton" class="standard-button floatsx" />
+									
+									<div class="forgotten_password"><a href="/exchange/user/forgottenpassword.html" title="Forgotten Password?" rel="nofollow">Forgotten Password?</a></div>
+								</form>
+								
+							</div>	
+							<div class="close_login"><a title="Close login layer" href="#">Close</a></div>
+						</div>
+						
+					</div>
+					
+				</div>	
+			</div>	
+			
+		</div>
+	</div>
+	<!-- end login container -->
+	<script type="text/javascript">
+		initProcess();
+		
+		jQuery(document).ready(function() {
+			var loginLayer = jQuery(".login_layer");
+			var loginOff = jQuery(".login");
+			var loginOn = jQuery('.login_on');
+			
+			/* open login layer */
+			loginOff.on('touchstart click', function()	{
+				loginLayer.addClass("active");
+				loginOn.show();
+				loginOff.hide();
+			});
+			
+			/* close login layer */
+			function closeLogin() {
+				loginLayer.removeClass("active");
+				loginOn.hide();
+				loginOff.show();
+			}
+			
+			jQuery(".close_login").on('touchstart click', function() {
+				closeLogin();
+			});
+			
+			jQuery('html').on('touchstart click', function() {
+				if (loginLayer.hasClass('active')){
+					closeLogin();
+				}
+			});
+			
+			jQuery('.login_layer, .login, .login_on').on('touchstart click', function(event){
+				event.stopPropagation();
+			});
+		});		  
+	</script>
+
+	
+	<div class="container">
+		<div id="containerpage">
+	<div class="clear"></div>
+	<!-- start logo --> 
+	<div class="logo">
+		<div class="logoSin">				&nbsp;<a href="/home/homepage.htm" title="Go to London Stock Exchange Home Page"><img src="/media/img/rebranding/logo_lse_rebranding.png" width="302" alt="London Stock Exchange Home Page" /></a>
+					</div>
+		<div class="logoDes">
+			<!-- Issuer Services link -->
+			<!--
+			<div class="head_issuerservices_link">
+				<a href="https://www.lsegissuerservices.com/login" title="Access issuer services" target="_blank">Access Issuer Services</a>
+			</div>-->
+			<!-- search engine -->
+			<div class="head_solr_search" id="head_solr_search">
+				<form action="/exchange/searchengine/search.html" method="get">
+					<input type="hidden" name="lang" value="en" /> 
+					<div class="SearchButton">
+						<input type="image" src="/media/img/rebranding/search.gif" title="Search in the site" alt="Search in the site" onclick="cleanQ();">
+					</div>
+					<label style="display:none;" for="head_solr_search_input"></label>
+					<input id="head_solr_search_input" type="text" name="q" class="head_solr_search_txt" value="Search for quotes, news, documents" onfocus="cleanQ();" onblur="if(this.value=='')this.value=this.defaultValue;" />			
+				</form>
+			</div>	
+		</div>	
+	</div>
+	<!-- end logo -->
+	<script type="text/javascript">
+	function cleanQ() {
+		var qElement = jQuery('#head_solr_search_input');
+		if(qElement.prop('defaultValue') == qElement.val()) {
+			qElement.val('');
+		}	
+	}
+	jQuery(document).ready(function() {
+		var msgLabels = {
+			quotes : 'Quotations', 
+			news : 'News',
+			pages : 'Pages and Documents',
+			showAll : 'Show all',
+			noResult : 'No results found'
+		};		      var searchUrl = {
+				quotes : '/exchange/searchengine/quotes/search.html',
+				news : '/exchange/searchengine/news/search.html',
+				pages : '/exchange/searchengine/pages/search.html',
+				json : '/exchange/searchengine/all/json/search.html'      
+			  };
+				enableAutocomplete('#head_solr_search_input', 'div.head_solr_search', msgLabels, searchUrl);
+	});
+	</script>
+						
+	<!-- site search 
+	<div class="spaceSearch">
+		<form action="/exchange/site-search/search-all.html" name="fsearchsite" id="fsearchsite" method="get" onSubmit="return searchsite();">
+			<input type="hidden" name="lang" value="en" /> 
+			<div class="SearchText">
+				<label style="display:none;" for="as_epq"></label>
+				<input type="text" name="searchString" id="as_epq"  class="bt2" value="Search in the site" onblur='if(this.value==""){this.value="Search in the site";}' onfocus='if(this.value=="Search in the site"){this.value="";}' />
+			</div>
+			<div class="SearchButton">
+				<input type="image" src="/media/img/rebranding/search.gif" onblur='if(as_epq.value==""){as_epq.value="Search in the site";}' title="Search in the site" alt="Search in the site" />
+			</div>	
+		</form>
+	</div>	 
+	<div class="clear"></div>
+	<!-- quotes search 
+	<div class="spaceSearch">
+		<form action="/exchange/prices-and-markets/stocks/prices-search/stock-prices-search.html" name="genericSearch" id="genericSearch" method="get" onSubmit="return searchtitle();">	
+			<label style="display:none;" for="nameCode"></label> 
+			<div class="SearchText"><input type="text" name="nameCode" id="nameCode" class="bt2" value="Quotes search" onblur='if(this.value==""){this.value="Quotes search";}' onfocus='if(this.value=="Quotes search"){this.value="";}'/></div>
+			<div class="SearchButton"><input type="image" src="/media/img/rebranding/search.gif" onblur='if(nameCode.value==""){nameCode.value="Quotes search";}'  title="Search in the quotes" alt="Search in the quotes" /></div>	
+		</form>
+	</div> -->
+	<div id="main-nav-box"><div class="main-nav-position">
+	<div id="main-nav-container">
+		<div class="main-navigation">
+			<ul id="main-nav">
+			<!-- voci menu 1 level -->
+																											<li class="mega menu-home"><a href="/home/homepage.htm" title="Go to Home"><span class="icon-home" aria-hidden="true"></span></a>
+																												
+					</li>
+																			<li class="mega active menu-prices-and-markets"><a href="/prices-and-markets/markets/prices.htm" title="Go to Prices&nbsp;&amp; markets"><span>Prices&nbsp;&amp; markets</span></a>
+																																																																																																																																																																										<div class="mega-open">
+								<div class="mega-open-inner">	
+	<!-- Column column1 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																							
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/prices-and-markets/stocks/stocks-and-prices.htm" title="Go to Stocks" >Stocks</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																																																																																																				
+						<ul class="sub-mega-open-list">																																																			<li class="voce-3lev"><a href="/exchange/prices-and-markets/stocks/prices-search/stock-prices-search.html" title="Go to All prices search" class="a-mega">All prices search</a></li>		
+																																																								<li class="voce-3lev"><a href="/exchange/prices-and-markets/stocks/main-market/main-market.html" title="Go to Search by market" class="a-mega">Search by market</a></li>		
+																																																																	<li class="voce-3lev"><a href="/exchange/prices-and-markets/stocks/techmark/price-techmark-search.html" title="Go to techMARK" class="a-mega">techMARK</a></li>		
+																																										<li class="voce-3lev"><a href="/exchange/prices-and-markets/stocks/landmark/landmark-search.html" title="Go to landMARK" class="a-mega">landMARK</a></li>		
+																																																																								<li class="voce-3lev"><a href="/exchange/prices-and-markets/stocks/risers-and-fallers/risers-fallers.html" title="Go to Risers and fallers" class="a-mega">Risers and fallers</a></li>		
+																																										<li class="voce-3lev"><a href="/exchange/prices-and-markets/stocks/new-and-recent-issues/new-recent-issues-home.html" title="Go to New and recent issues" class="a-mega">New and recent issues</a></li>		
+																																																	<li class="voce-3lev"><a href="/prices-and-markets/stocks/tools-and-services/tools.htm" title="Go to Tools and services" class="a-mega">Tools and services</a></li>		
+																																										<li class="voce-3lev"><a href="/prices-and-markets/stocks/ftse100/ftse100.htm" title="Go to FTSE 100 Stocks" class="a-mega">FTSE 100 Stocks</a></li>		
+																														</ul>
+																																																																																																																																																																</div>
+	</div>
+	
+	
+	<!-- Column column2 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																					
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/exchange/prices-and-markets/stocks/indices/ftse-indices.html" title="Go to Indices" >Indices</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																																																																																																																							
+						<ul class="sub-mega-open-list">																																																																																																																																																																																																																																																																																																																																																																		</ul>
+																												
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/exchange/prices-and-markets/ETFs/ETFs.html" title="Go to ETFs" >ETFs</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																			
+						<ul class="sub-mega-open-list">																																					<li class="voce-3lev"><a href="/exchange/prices-and-markets/ETFs/ETFs-multi-currency.html" title="Go to Multi currency" class="a-mega">Multi currency</a></li>		
+																														</ul>
+																												
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/exchange/prices-and-markets/ETPs/ETPs.html" title="Go to ETPs" >ETPs</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																			
+						<ul class="sub-mega-open-list">																																					<li class="voce-3lev"><a href="/exchange/prices-and-markets/ETPs/ETPs-multi-currency.html" title="Go to Multi currency" class="a-mega">Multi currency</a></li>		
+																														</ul>
+																																																																																																																						</div>
+	</div>
+	
+	
+	<!-- Column column3 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																																													
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/exchange/prices-and-markets/retail-bonds/retail-bonds-search.html" title="Go to Retail Bonds" >Retail Bonds</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																																																																					
+						<ul class="sub-mega-open-list">																																																																			<li class="voce-3lev"><a href="/exchange/prices-and-markets/retail-bonds/advanced-search/advanced-search.html" title="Go to Advanced bonds search" class="a-mega">Advanced bonds search</a></li>		
+																																																																																																																																																																																																						</ul>
+																												
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/exchange/prices-and-markets/debt-securities/debt-securities-search.html" title="Go to Debt securities" >Debt securities</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																			
+						<ul class="sub-mega-open-list">																																					<li class="voce-3lev"><a href="/exchange/prices-and-markets/debt-securities/ism.html" title="Go to ISM Bonds" class="a-mega">ISM Bonds</a></li>		
+																																										<li class="voce-3lev"><a href="/exchange/prices-and-markets/debt-securities/green-bonds-search.html" title="Go to Green Bonds" class="a-mega">Green Bonds</a></li>		
+																																					</ul>
+																																																																												</div>
+	</div>
+	
+	
+	<!-- Column column4 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																															
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/exchange/prices-and-markets/covered-warrants/covered-warrants-home.html" title="Go to Covered warrants" >Covered warrants</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																				
+						<ul class="sub-mega-open-list">																																					<li class="voce-3lev"><a href="/exchange/prices-and-markets/covered-warrants/covered-warrants-search.html" title="Go to Advanced&nbsp;search" class="a-mega">Advanced&nbsp;search</a></li>		
+																																																																								<li class="voce-3lev"><a href="/exchange/prices-and-markets/covered-warrants/covered-warrants-newissues.html" title="Go to New issues" class="a-mega">New issues</a></li>		
+																																																																												</ul>
+																																																								
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/exchange/prices-and-markets/structured-products/structured-products-home.html" title="Go to Structured products" >Structured products</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																									
+						<ul class="sub-mega-open-list">																																																																																																																																																										</ul>
+																																																														</div>
+	</div>
+	
+	
+	<!-- Column column5 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																																																																																																											
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/prices-and-markets/international-markets/markets/markets-home.htm" title="Go to International Markets" >International Markets</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																				
+						<ul class="sub-mega-open-list">																																					<li class="voce-3lev"><a href="/prices-and-markets/international-markets/international-shares/international-shares.htm" title="Go to International Shares" class="a-mega">International Shares</a></li>		
+																																																																	<li class="voce-3lev"><a href="/exchange/prices-and-markets/international-markets/indices/home.html" title="Go to International indices" class="a-mega">International indices</a></li>		
+																																										<li class="voce-3lev"><a href="/exchange/prices-and-markets/international-markets/rates/home.html" title="Go to Exchange Rates" class="a-mega">Exchange Rates</a></li>		
+																														</ul>
+																												</div>
+	</div>
+	
+
+									<div class="clear"></div> 
+								</div>	
+							</div>	
+												
+					</li>
+																			<li class="mega menu-news"><a href="/news/news/finance.htm" title="Go to News&nbsp;&amp; events"><span>News&nbsp;&amp; events</span></a>
+																																																																																																							<div class="mega-open">
+								<div class="mega-open-inner">	
+	<!-- Column column1 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																									
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/exchange/news/market-news/market-news-home.html" title="Go to RNS" >RNS</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																													
+						<ul class="sub-mega-open-list">																																																																																												</ul>
+																																																																																																												</div>
+	</div>
+	
+	
+	<!-- Column column2 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																							
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/exchange/news/cnbc/archive.html" title="Go to CNBC" >CNBC</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																																									</div>
+	</div>
+	
+	
+	<!-- Column column3 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																																																							</div>
+	</div>
+	
+	
+	<!-- Column column4 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																																																							</div>
+	</div>
+	
+	
+	<!-- Column column5 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																																																							</div>
+	</div>
+	
+
+									<div class="clear"></div> 
+								</div>	
+							</div>	
+												
+					</li>
+																			<li class="mega menu-statistics"><a href="/statistics/home/statistics.htm" title="Go to Statistics"><span>Statistics</span></a>
+																																																																																																																																																																										<div class="mega-open">
+								<div class="mega-open-inner">	
+	<!-- Column column1 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																			
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="http://www.londonstockexchange.com/statistics/home/statistics.htm" title="Go to Statistics - Home" >Statistics - Home</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																							
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/statistics/monthly-market-report/monthly-market-report.htm" title="Go to Monthly Market Report" >Monthly Market Report</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																																																																																																																																					</div>
+	</div>
+	
+	
+	<!-- Column column2 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																									
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/statistics/markets/markets.htm" title="Go to Primary Market Statistics" >Primary Market Statistics</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																			
+						<ul class="sub-mega-open-list">																																																																														</ul>
+																																																																																																																																														
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/statistics/companies-and-issuers/companies-and-issuers.htm" title="Go to Companies and Securities" >Companies and Securities</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->									</div>
+	</div>
+	
+	
+	<!-- Column column3 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																																																																															
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/exchange/statistics/daily-trading/daily-trading.html" title="Go to Order Book Trading" >Order Book Trading</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																					
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/statistics/trading/trading.htm" title="Go to Secondary Market Trading" >Secondary Market Trading</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																														
+						<ul class="sub-mega-open-list">																																																																																																					</ul>
+																												</div>
+	</div>
+	
+	
+	<!-- Column column4 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																															
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/statistics/specialist-issues/specialist-issues.htm" title="Go to ETF &amp; Debt Statistics" >ETF &amp; Debt Statistics</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																				
+						<ul class="sub-mega-open-list">																																																																																																																					</ul>
+																												
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/statistics/ftse/ftse.htm" title="Go to FTSE" >FTSE</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																																					</div>
+	</div>
+	
+	
+	<!-- Column column5 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																	
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/statistics/historic/historic.htm" title="Go to Historic" >Historic</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																																																																																																	
+						<ul class="sub-mega-open-list">																																																																																																																																																																																																																																																																																																																				</ul>
+																																																																																																																						</div>
+	</div>
+	
+
+									<div class="clear"></div> 
+								</div>	
+							</div>	
+												
+					</li>
+																			<li class="mega menu-products-and-services"><a href="/products-and-services/providers/information-providers.htm" title="Go to Products&nbsp;&amp; services"><span>Products&nbsp;&amp; services</span></a>
+																																																																																																																																											<div class="mega-open">
+								<div class="mega-open-inner">	
+	<!-- Column column1 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																													
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/products-and-services/connectivity/connectivity.htm" title="Go to Connectivity" >Connectivity</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																																																
+						<ul class="sub-mega-open-list">																																																																																																																																																																																																																	</ul>
+																												
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/products-and-services/matching-reconciliation/matching-reconciliation.htm" title="Go to Matching&nbsp;&amp; reconciliation" >Matching&nbsp;&amp; reconciliation</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																																																												</div>
+	</div>
+	
+	
+	<!-- Column column2 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																									
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/products-and-services/market-data/realtimedata/realtimedata.htm" title="Go to Real time&nbsp;data" >Real time&nbsp;data</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																								
+						<ul class="sub-mega-open-list">																																																																																					</ul>
+																												
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/products-and-services/reference-data/reference-data.htm" title="Go to Reference&nbsp;&amp; historical data" >Reference&nbsp;&amp; historical data</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																																										
+						<ul class="sub-mega-open-list">																																																																																																																																																																																																	</ul>
+																																																																																</div>
+	</div>
+	
+	
+	<!-- Column column3 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																					
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/products-and-services/rns/rns.htm" title="Go to RNS" >RNS</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																																																																						
+						<ul class="sub-mega-open-list">																																																																																																																																																																																																																																																															</ul>
+																												
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/products-and-services/technical-library/home/technical.htm" title="Go to Technical library&nbsp;" >Technical library&nbsp;</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																																				
+						<ul class="sub-mega-open-list">																																																																																																																																																															<li class="voce-3lev"><a href="/products-and-services/technical-library/service-announcements/service-announcements.htm" title="Go to Service announcements" class="a-mega">Service announcements</a></li>		
+																																					</ul>
+																																																				</div>
+	</div>
+	
+	
+	<!-- Column column4 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																																																	
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/products-and-services/millennium-exchange/intro-to-millennium-it.htm" title="Go to Ticker Plant" >Ticker Plant</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																								
+						<ul class="sub-mega-open-list">																																																																																																																			</ul>
+																																						</div>
+	</div>
+	
+	
+	<!-- Column column5 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																																																															
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/products-and-services/trading-services/trading-services.htm" title="Go to Trading services" >Trading services</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																					</div>
+	</div>
+	
+
+									<div class="clear"></div> 
+								</div>	
+							</div>	
+												
+					</li>
+																			<li class="mega menu-traders-and-brokers"><a href="/traders-and-brokers/traders-brokers/home.htm" title="Go to For traders &amp;&nbsp;brokers"><span>For traders<br>
+&amp;&nbsp;brokers</span></a>
+																																																																																														<div class="mega-open">
+								<div class="mega-open-inner">	
+	<!-- Column column1 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																									
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/traders-and-brokers/membership/membership.htm" title="Go to Membership" >Membership</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																			
+						<ul class="sub-mega-open-list">																																																																														</ul>
+																												
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/traders-and-brokers/rules-regulations/rules-regulations.htm" title="Go to Rules and regulations" >Rules and regulations</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																																																																																																																		
+						<ul class="sub-mega-open-list">																																																																																																																																																																																																																													<li class="voce-3lev"><a href="/traders-and-brokers/rules-regulations/change-and-updates/updatesguidance.htm" title="Go to Stock Exchange Notices and&nbsp;guidance" class="a-mega">Stock Exchange Notices and&nbsp;guidance</a></li>		
+																																																																																																																																																	</ul>
+																																																								</div>
+	</div>
+	
+	
+	<!-- Column column2 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																					
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/traders-and-brokers/security-types/security-types.htm" title="Go to Security types" >Security types</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																																																
+						<ul class="sub-mega-open-list">																																																																																																																																																																																																																	</ul>
+																												
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/traders-and-brokers/training-services/training-services.htm" title="Go to Academy LSEG" >Academy LSEG</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																							</div>
+	</div>
+	
+	
+	<!-- Column column3 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																	
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/traders-and-brokers/private-investors/home/private-investors.htm" title="Go to Private investors" >Private investors</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																			
+						<ul class="sub-mega-open-list">																																												<li class="voce-3lev"><a href="/traders-and-brokers/private-investors/stampdutyexemption/stampdutyexemption.htm" title="Go to Stamp Duty Exemption" class="a-mega">Stamp Duty Exemption</a></li>		
+																																										<li class="voce-3lev"><a href="/traders-and-brokers/private-investors/magazine/magazine.htm" title="Go to Private Investor magazine" class="a-mega">Private Investor magazine</a></li>		
+																																										<li class="voce-3lev"><a href="/prices-and-markets/stocks/tools-and-services/direct-market-access/direct-market-access.htm" title="Go to Direct Market Access" class="a-mega">Direct Market Access</a></li>		
+																																										<li class="voce-3lev"><a href="/traders-and-brokers/private-investors/investing-in-shares/about-share/investing-share.htm" title="Go to Investing in shares" class="a-mega">Investing in shares</a></li>		
+																																												</ul>
+														</div>
+	</div>
+	
+	
+	<!-- Column column4 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																	</div>
+	</div>
+	
+	
+	<!-- Column column5 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																	</div>
+	</div>
+	
+
+									<div class="clear"></div> 
+								</div>	
+							</div>	
+												
+					</li>
+																			<li class="mega menu-companies-and-advisors"><a href="/companies-and-advisors/companies/companiesandadvisors.htm" title="Go to For companies &amp; advisers"><span>For companies<br>
+&amp; advisers</span></a>
+																																																																																																																																				<div class="mega-open">
+								<div class="mega-open-inner">	
+	<!-- Column column1 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																	
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/companies-and-advisors/listing/thinkingoflisting.htm" title="Go to Thinking of joining" >Thinking of joining</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																															
+						<ul class="sub-mega-open-list">																																																																																																																																																																										</ul>
+																								
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/companies-and-advisors/main-market/main-market/home.htm" title="Go to Main Market" >Main Market</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																															
+						<ul class="sub-mega-open-list">																																																																																																																																																																										</ul>
+																																																																																</div>
+	</div>
+	
+	
+	<!-- Column column2 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																									
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/companies-and-advisors/aim/aim/aim.htm" title="Go to AIM" >AIM</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																																																										
+						<ul class="sub-mega-open-list">																																																																																																																																																																																																																															</ul>
+																												
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/companies-and-advisors/psm/home/psm.htm" title="Go to Professional Securities Market" >Professional Securities Market</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																				
+						<ul class="sub-mega-open-list">																																																																																																																																																			</ul>
+																																																				</div>
+	</div>
+	
+	
+	<!-- Column column3 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																																					
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/companies-and-advisors/international/securities/market.htm" title="Go to International Securities Market" >International Securities Market</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																				
+						<ul class="sub-mega-open-list">																																																																																																																					</ul>
+																												
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/companies-and-advisors/news-events/events.htm" title="Go to News and events" >News and events</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																			</div>
+	</div>
+	
+	
+	<!-- Column column4 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																			
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="http://www.lsegissuerservices.com/" title="Go to Issuer Services" >Issuer Services</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																																																																			</div>
+	</div>
+	
+	
+	<!-- Column column5 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																																																													</div>
+	</div>
+	
+
+									<div class="clear"></div> 
+								</div>	
+							</div>	
+												
+					</li>
+																			<li class="mega menu-specialist-issuers"><a href="/specialist-issuers/issuers/specialist-issuers.htm" title="Go to For specialist issuers"><span>For specialist issuers</span></a>
+																																																																																																																								<div class="mega-open">
+								<div class="mega-open-inner">	
+	<!-- Column column1 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																							
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/specialist-issuers/covered-warrants/coveredwarrants.htm" title="Go to Covered Warrants" >Covered Warrants</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																														
+						<ul class="sub-mega-open-list">																																																																							</ul>
+																																										
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/specialist-issuers/debts-bonds/debts-bond.htm" title="Go to Debt Securities" >Debt Securities</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																						
+						<ul class="sub-mega-open-list">																																																																																																	</ul>
+																												
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/specialist-issuers/green-bonds/green-bonds.htm" title="Go to Green Bonds" >Green Bonds</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																															</div>
+	</div>
+	
+	
+	<!-- Column column2 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																													
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/specialist-issuers/retail-bonds/retail-bonds.htm" title="Go to Retail Bonds" >Retail Bonds</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																															
+						<ul class="sub-mega-open-list">																																																																																																																																																																										</ul>
+																																						
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/specialist-issuers/structuredproducts/structuredproducts.htm" title="Go to Structured Products" >Structured Products</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																																											</div>
+	</div>
+	
+	
+	<!-- Column column3 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																															
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/specialist-issuers/reits/reits.htm" title="Go to REITs" >REITs</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																																																				
+						<ul class="sub-mega-open-list">																																																																																																																					</ul>
+																												
+					<!-- menu 2 level -->
+					<ul class="mega-open-list">
+						<li class="voce-2lev"><a href="/specialist-issuers/islamic/finance.htm" title="Go to Islamic Finance" >Islamic Finance</a></li>
+					</ul>
+					
+					<!-- menu 3 level -->																								</div>
+	</div>
+	
+	
+	<!-- Column column4 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																																													</div>
+	</div>
+	
+	
+	<!-- Column column5 -->
+	<div class="mega-open-column">							
+		<div class="mega-sub-column">																																																																																																													</div>
+	</div>
+	
+
+									<div class="clear"></div> 
+								</div>	
+							</div>	
+												
+					</li>
+																			</ul>
+		</div>	
+		
+	</div></div>
+	</div>
+		
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+				var firstVoice = jQuery(".mega");
+				var mainMenu = jQuery('#main-nav-container');
+			
+				<!-- Open megaMenu on click -->
+				firstVoice.not('.menu-home').on('touchstart click', function (e) {
+					if	(jQuery(this).hasClass("menu-selected")) {
+					
+					}else{
+						firstVoice.not(this).removeClass("menu-selected");
+						jQuery(this).addClass("menu-selected");
+						e.preventDefault();
+					}	
+				});
+				
+				<!-- Close megaMenu -->
+				function closeMenu(){
+					if (firstVoice.hasClass('menu-selected')){
+						firstVoice.removeClass('menu-selected');
+					}
+				}
+				
+				jQuery('html').bind({
+					click: closeMenu,
+					touchstart: function() {
+						jQuery('html').unbind('click', closeMenu);
+						closeMenu();
+					}
+				});
+				
+				mainMenu.on('touchstart click',function(event){
+					event.stopPropagation();
+				});
+				
+	 		});
+		</script>	
+	
+	<div class="clear"></div> 
+	
+ 	<!-- Where am I -->
+	<div id="menuNavigatorBox">
+ 	<div id="menuNavigator"> 
+  		<div class="menuNavigatorCellaSin">				<a href="/home/homepage.htm" class="voci" title="Go to Home page">Home page</a>										&nbsp;<span class="voci">&#8250;</span>&nbsp;&nbsp;
+						<a href="/prices-and-markets/markets/prices.htm" class="voci" title="Go to Prices&nbsp;&amp; markets">Prices&nbsp;&amp; markets</a>
+															&nbsp;<span class="voci">&#8250;</span>&nbsp;&nbsp;
+						<a href="/exchange/prices-and-markets/stocks/indices/ftse-indices.html" class="voci" title="Go to Indices">Indices</a>
+																		<span class="voci">&nbsp;&#8250;&nbsp;</span>
+							 		</div> 
+		<div class="twitter_icon"><a href="https://twitter.com/LSEplc" class="twitter-follow-button" data-show-count="false" target="_blank">Follow @LSEplc</a></div>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+ 	</div></div>
+ 	<!-- end Where am I --> 
+
+ 	<!-- start full-container -->
+	<div id="fullcontainerBox">
+	<div id="fullcontainer"> 
+	
+
+
+	<!-- ********************* menu ********************* -->	
+	<div class="column_menu"><div id="pi-menusin">
+	<div id="pi-listavoci-menu">
+			<!-- menu left 1 lev -->			<ul style="list-style-type:none; list-style-image:none;">																							
+									<!-- SERVICE 3 lev ACCESO -->																			<li style="list-style-type:none; list-style-image:none;">
+		<a href="/exchange/prices-and-markets/stocks/indices/summary/summary-indices-constituents.html?index=UKX">FTSE 100</a>
+										</li>
+																										
+																					
+									<!-- SERVICE 3 lev ACCESO -->																			<li style="list-style-type:none; list-style-image:none;">
+		<a href="/exchange/prices-and-markets/stocks/indices/summary/summary-indices-constituents.html?index=MCX">FTSE 250</a>
+										</li>
+																										
+																					
+									<!-- SERVICE 3 lev ACCESO -->																			<li style="list-style-type:none; list-style-image:none;">
+		<a href="/exchange/prices-and-markets/stocks/indices/summary/summary-indices-constituents.html?index=NMX">FTSE 350</a>
+										</li>
+																										
+																					
+									<!-- SERVICE 3 lev ACCESO -->																			<li style="list-style-type:none; list-style-image:none;">
+		<a href="/exchange/prices-and-markets/stocks/indices/summary/summary-indices-constituents.html?index=ASX">FTSE All-Share</a>
+										</li>
+																										
+																					
+									<!-- SERVICE 3 lev ACCESO -->																			<li style="list-style-type:none; list-style-image:none;">
+		<a href="/exchange/prices-and-markets/stocks/indices/summary/summary-indices-constituents.html?index=AIM5">FTSE AIM UK 50</a>
+										</li>
+																										
+																					
+									<!-- SERVICE 3 lev ACCESO -->																			<li style="list-style-type:none; list-style-image:none;">
+		<a href="/exchange/prices-and-markets/stocks/indices/summary/summary-indices-constituents.html?index=AIM1">FTSE AIM UK 100</a>
+										</li>
+																										
+																					
+									<!-- SERVICE 3 lev ACCESO -->																			<li style="list-style-type:none; list-style-image:none;">
+		<a href="/exchange/prices-and-markets/stocks/indices/summary/summary-indices-constituents.html?index=AXX">FTSE AIM All-Share</a>
+										</li>
+																										
+																					
+									<!-- SERVICE 3 lev ACCESO -->																			<li style="list-style-type:none; list-style-image:none;">
+		<a href="/exchange/prices-and-markets/stocks/indices/summary/summary-indices-constituents.html?index=T1X">FTSE TechMARK Focus</a>
+										</li>
+																										
+																					
+									<!-- SERVICE 3 lev ACCESO -->																			<li style="list-style-type:none; list-style-image:none;">
+		<a href="/exchange/prices-and-markets/stocks/indices/summary/summary-indices-constituents.html?index=TMS1">FTSE techMARK mediscience</a>
+										</li>
+																										
+																					
+									<!-- SERVICE 3 lev ACCESO -->																			<li style="list-style-type:none; list-style-image:none;">
+		<a href="/exchange/prices-and-markets/stocks/indices/summary/summary-indices-constituents.html?index=TASX">FTSE techMARK All-Share</a>
+										</li>
+																										
+																					
+									<!-- SERVICE 3 lev ACCESO -->																			<li style="list-style-type:none; list-style-image:none;">
+		<a href="/exchange/prices-and-markets/stocks/indices/orb-indices.html">FTSE ORB Indices</a>
+										</li>
+																										
+																					
+									<!-- SERVICE 3 lev ACCESO -->																			<li style="list-style-type:none; list-style-image:none;">
+		<a href="/exchange/prices-and-markets/stocks/indices/summary/summary-indices-constituents.html?index=SMX">FTSE SmallCap</a>
+										</li>
+																										
+																					
+									<!-- SERVICE 3 lev ACCESO -->																			<li style="list-style-type:none; list-style-image:none;">
+		<a href="/exchange/prices-and-markets/stocks/indices/summary/summary-indices-constituents.html?index=E3X">FTSE Eurotop 300</a>
+										</li>
+																										
+																					
+									<!-- SERVICE 3 lev ACCESO -->																			<li style="list-style-type:none; list-style-image:none;">
+		<a href="/exchange/prices-and-markets/stocks/indices/ethic-indices/other-ethic-indices.html">FTSE Russell ESG Indices</a>
+										</li>
+																										
+																																																								</ul>
+				<br class="clear" />
+	
+	</div>     
+</div>
+
+					
+	</div>
+	<!-- ********************* 1cols ********************* -->	
+	<div class="column1_2cols_big">								<h1></h1><div class="lineh1"><img src="/media/img/void.gif" width="1" height="1" alt="" /></div>
+					
+
+											<br/>
+						<!-- /prices-and-markets/indices/mediainidicesconstituents -->
+<script type='text/javascript' src='/media/js/scriptDWRExtension.js'></script>
+<script>
+
+  function submitOnEnter(e,formId)
+ {
+	if( e.keyCode == '13' ){
+
+	  clearInitial(formId);
+	
+	}
+ }
+ 
+ function submitOnEnterGeneric(e,formId)
+ {
+	if( e.keyCode == '13' ){
+
+	  doSubmit(formId);
+	
+	}
+ }
+ 
+
+ function setInitial(initial,formId) {
+   var form = document.getElementById(formId);
+   if(formId === 'ismSearch') {
+   	form.namecode.value='';
+   } else {
+   	form.nameCode.value='';
+   }
+   form.initial.value=initial;
+   form.submit();
+ }
+ 
+ function clearInitial(formId) {
+   var form = document.getElementById(formId);
+   form.initial.value='';
+   form.submit();
+ }
+ 
+ function doSubmit(formId) {
+   var form = document.getElementById(formId);
+   form.submit();
+ }
+ 
+ 
+ function deleteBlanks(str) {
+		var strResult=str.replace(/ /g,"");
+		strResult=strResult.replace(/&/g ,"");
+		return strResult;
+	}
+
+ 
+</script>
+
+
+
+
+
+<!-- title search -->
+<div class="tab_title_box">
+	<div class="tab_title">
+	 <div class="tab_title_int">
+	  <div class="tab_title_span">
+	
+	    <span id="titleIndexSectorSearch">
+FTSE 100	    </span>
+	   
+		
+	  </div>
+	 </div>
+	</div>
+	
+	<div class="tab_line"></div>
+</div>
+
+<div class="tab_box_search">
+
+	<form id="indexOrIndustrySectorSearch" action="/exchange/prices-and-markets/stocks/indices/constituents-indices.html" method="get">
+
+	<!-- search -->
+	<div class="width100">
+		<div class="floatsx alignsx labels"><label for="index">Index</label></div>
+		<div class="floatsx">
+
+    
+<select id="index" name="index" class="field">
+
+    
+	   <option value="" >Select</option>
+	   
+<option value="UKX" selected>
+FTSE 100
+</option><option value="MCX">
+FTSE 250
+</option><option value="NMX">
+FTSE 350
+</option><option value="ASX">
+FTSE All-Share
+</option><option value="AIM5">
+FTSE AIM UK 50 Index
+</option><option value="AIM1">
+FTSE AIM 100 Index
+</option><option value="AXX">
+FTSE AIM All-Share
+</option><option value="T1X">
+FTSE techMARK Focus
+</option><option value="TASX">
+FTSE techMARK All-Share
+</option><option value="TMS1">
+FTSE techMARK mediscience
+</option><option value="SMX">
+FTSE SmallCap
+</option><option value="HIX">
+FTSE 350 High Yield
+</option><option value="LIX">
+FTSE 350 Low Yield
+</option><option value="NSIX">
+FTSE Fledgling (ex IT)
+</option>	
+	
+</select>
+
+
+
+  
+<br/>
+		</div>
+		<div class="clear"></div>
+		<div class="floatsx alignsx labels"><label for="industrySector">Industry sector</label></div>
+		<div class="floatsx">
+
+  
+<select id="industrySector" name="industrySector" class="field">
+
+    
+	   <option value="" selected>Select</option>
+	   
+<option value="502010">
+Aerospace and Defense
+</option><option value="601020">
+Alternative Energy
+</option><option value="401010">
+Automobiles and Parts
+</option><option value="301010">
+Banks
+</option><option value="451010">
+Beverages
+</option><option value="552010">
+Chemicals
+</option><option value="302040">
+Closed End Investments
+</option><option value="501010">
+Construction and Materials
+</option><option value="402010">
+Consumer Services
+</option><option value="651010">
+Electricity
+</option><option value="502020">
+Electronic and Electrical Equipment
+</option><option value="302010">
+Finance and Credit Services
+</option><option value="451020">
+Food Producers
+</option><option value="651020">
+Gas, Water and Multi-utilities
+</option><option value="502030">
+General Industrials
+</option><option value="201010">
+Health Care Providers
+</option><option value="402020">
+Household Goods and Home Construction
+</option><option value="502040">
+Industrial Engineering
+</option><option value="551010">
+Industrial Materials
+</option><option value="551020">
+Industrial Metals and Mining
+</option><option value="502050">
+Industrial Support Services
+</option><option value="502060">
+Industrial Transportation
+</option><option value="302020">
+Investment Banking and Brokerage Services
+</option><option value="402030">
+Leisure Goods
+</option><option value="303010">
+Life Insurance
+</option><option value="403010">
+Media
+</option><option value="201020">
+Medical Equipment and Services
+</option><option value="302030">
+Mortgage Real Estate Investment Trusts
+</option><option value="303020">
+Non-life Insurance
+</option><option value="601010">
+Oil, Gas and Coal
+</option><option value="302050">
+Open End and Miscellaneous Investment Vehicles
+</option><option value="452010">
+Personal Care, Drug and Grocery Stores
+</option><option value="402040">
+Personal Goods
+</option><option value="201030">
+Pharmaceuticals, Biotechnology and Marijuana Producers
+</option><option value="551030">
+Precious Metals and Mining
+</option><option value="351020">
+Real Estate Investment Trusts
+</option><option value="351010">
+Real Estate Investment and Services
+</option><option value="404010">
+Retailers
+</option><option value="101010">
+Software and Computer Services
+</option><option value="101020">
+Technology Hardware and Equipment
+</option><option value="151010">
+Telecommunications Equipment
+</option><option value="151020">
+Telecommunications Service Providers
+</option><option value="451030">
+Tobacco
+</option><option value="405010">
+Travel and Leisure
+</option><option value="651030">
+Waste and Disposal Services
+</option>	
+	
+</select>
+
+
+
+
+<br/>
+		 	<input type='hidden' name='page' value='1' /><!-- paginazione -->
+		</div>
+		<div class="clear"></div>
+		<div class="labels">&nbsp;</div>
+		<div class="button-wrapper floatsx">
+			<div class="standard-button floatsx"><a href="#" title="Search" onClick="doSubmit('indexOrIndustrySectorSearch')">SEARCH</a></div>	
+		</div>
+		<div class="clear10h"></div>
+		</form>
+	</div>
+</div>
+
+<br/>
+
+<!-- START TEMPLATE SERVICE -->
+<span class="disclaimer_gray"><br/>All data delayed by at least 15 minutes | as at&nbsp;20:49</span><br/>
+<div class="paging">
+<p class="floatsx">&nbsp;Page 1 of 6</p>
+<p class="aligndx">
+| <span class="pagingselected">1</span>
+| <a href="/exchange/prices-and-markets/stocks/indices/constituents-indices.html?index=UKX&page=2" title="Page 2">2</a>
+| <a href="/exchange/prices-and-markets/stocks/indices/constituents-indices.html?index=UKX&page=3" title="Page 3">3</a>
+| <a href="/exchange/prices-and-markets/stocks/indices/constituents-indices.html?index=UKX&page=4" title="Page 4">4</a>
+| <a href="/exchange/prices-and-markets/stocks/indices/constituents-indices.html?index=UKX&page=5" title="Page 5">5</a>
+| <a href="/exchange/prices-and-markets/stocks/indices/constituents-indices.html?index=UKX&page=6" title="Page 6">6</a>
+|
+<a href="/exchange/prices-and-markets/stocks/indices/constituents-indices.html?index=UKX&page=2" title="Next">Next</a>
+</p>
+</div>
+<table cellspacing="0" cellpadding="0" class="table_dati" summary="Companies and Prices">
+<!-- header row -->
+<thead>
+<tr>
+<th scope="col" abbr="Code" nowrap>
+<p class="floatsx linenormal">Code</p>
+<p class="aligndx linenormal sort">
+<a href="/exchange/prices-and-markets/stocks/indices/constituents-indices.html?index=UKX&ord=code&mod=down&ord=name&mod=up" title="Re-sort results by TIDM or EPIC code"><img src="/media/img/icon/up_sort_unsel.gif" alt="Re-sort" /></a>
+</p>
+</th>
+<th scope="col" abbr="Name" nowrap>
+<p class="floatsx linenormal">Name</p>
+<p class="aligndx linenormal sort">
+<a href="/exchange/prices-and-markets/stocks/indices/constituents-indices.html?index=UKX&ord=name&mod=down&ord=code&mod=up" title="Re-sort results by Name"><img src="/media/img/icon/up_sort_sel.gif" alt="Re-sort" /></a>
+</p>
+</th>
+<th scope="col" abbr="Cur">Cur</th>
+<th scope="col" abbr="Price">Price</th>
+<th scope="col" abbr="+/-">+/-</th>
+<th scope="col" abbr="%+/-">%+/-</th>
+<th scope="col" abbr="Chart">&nbsp;</th>
+<th scope="col" abbr="News">&nbsp;</th>
+<th scope="col" abbr="Portfolio">&nbsp;</th>
+<th scope="col" abbr="Watchlist">&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd" valign="top">
+<td scope="row" class="name">III</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB00B1YW4409GBGBXSET1.html" title="View detailed prices page" target="">3I GRP.</a>
+</td>
+<td class="name">GBX</td>
+<td>1,060.50</td>
+<td class="red">
+-11.50<img src="/media-sme/img/icon/down.gif" alt="Down" /> </td>
+<td class="red">
+-1.07 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB00B1YW4409GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=III&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/news.gif" alt="News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/III.html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=III" rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="even" valign="top">
+<td scope="row" class="name">ABF</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB0006731235GBGBXSET1.html" title="View detailed prices page" target="">A.B.FOOD</a>
+</td>
+<td class="name">GBX</td>
+<td>2,106.00</td>
+<td class="red">
+-13.00<img src="/media-sme/img/icon/down.gif" alt="Down" /> </td>
+<td class="red">
+-0.61 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB0006731235GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=ABF&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/news.gif" alt="News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/ABF.html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=ABF" rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="odd" valign="top">
+<td scope="row" class="name">ADM</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB00B02J6398GBGBXSET1.html" title="View detailed prices page" target="">ADMIRAL GRP</a>
+</td>
+<td class="name">GBX</td>
+<td>2,037.00</td>
+<td class="green">
++4.00<img src="/media-sme/img/icon/up.gif" alt="Up" /> </td>
+<td class="green">
++0.20 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB00B02J6398GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=ADM&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/news.gif" alt="News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/ADM.html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=ADM" rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="even" valign="top">
+<td scope="row" class="name">AAL</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB00B1XZS820GBGBXSET1.html" title="View detailed prices page" target="">ANGLO AMERICAN</a>
+</td>
+<td class="name">GBX</td>
+<td>1,923.60</td>
+<td class="green">
++73.60<img src="/media-sme/img/icon/up.gif" alt="Up" /> </td>
+<td class="green">
++3.98 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB00B1XZS820GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=AAL&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/newsFlash.gif" alt="New News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/AAL.html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=AAL" rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="odd" valign="top">
+<td scope="row" class="name">ANTO</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB0000456144GBGBXSET1.html" title="View detailed prices page" target="">ANTOFAGASTA</a>
+</td>
+<td class="name">GBX</td>
+<td>864.00</td>
+<td class="green">
++37.00<img src="/media-sme/img/icon/up.gif" alt="Up" /> </td>
+<td class="green">
++4.47 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB0000456144GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=ANTO&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/news.gif" alt="News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/ANTO.html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=ANTO" rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="even" valign="top">
+<td scope="row" class="name">AHT</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB0000536739GBGBXSET1.html" title="View detailed prices page" target="">ASHTEAD GRP.</a>
+</td>
+<td class="name">GBX</td>
+<td>2,150.00</td>
+<td class="green">
++22.00<img src="/media-sme/img/icon/up.gif" alt="Up" /> </td>
+<td class="green">
++1.03 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB0000536739GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=AHT&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/newsFlash.gif" alt="New News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/AHT.html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=AHT" rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="odd" valign="top">
+<td scope="row" class="name">AZN</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB0009895292GBGBXSET1.html" title="View detailed prices page" target="">ASTRAZENECA</a>
+</td>
+<td class="name">GBX</td>
+<td>7,052.00</td>
+<td class="red">
+-39.00<img src="/media-sme/img/icon/down.gif" alt="Down" /> </td>
+<td class="red">
+-0.55 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB0009895292GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=AZN&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/news.gif" alt="News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/AZN.html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=AZN" rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="even" valign="top">
+<td scope="row" class="name">AUTO</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB00BVYVFW23GBGBXSET1.html" title="View detailed prices page" target="">AUTO TRAD</a>
+</td>
+<td class="name">GBX</td>
+<td>490.90</td>
+<td class="green">
++9.30<img src="/media-sme/img/icon/up.gif" alt="Up" /> </td>
+<td class="green">
++1.93 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB00BVYVFW23GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=AUTO&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/news.gif" alt="News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/AUTO.html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=AUTO" rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="odd" valign="top">
+<td scope="row" class="name">AVV</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB00BBG9VN75GBGBXSET1.html" title="View detailed prices page" target="">AVEVA GRP</a>
+</td>
+<td class="name">GBX</td>
+<td>3,682.00</td>
+<td class="black">
+0.00 </td>
+<td class="black">
++0.00 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB00BBG9VN75GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=AVV&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/news.gif" alt="News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/AVV.html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=AVV" rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="even" valign="top">
+<td scope="row" class="name">AV.</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB0002162385GBGBXSET1.html" title="View detailed prices page" target="">AVIVA</a>
+</td>
+<td class="name">GBX</td>
+<td>381.20</td>
+<td class="green">
++6.20<img src="/media-sme/img/icon/up.gif" alt="Up" /> </td>
+<td class="green">
++1.65 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB0002162385GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=AV.&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/news.gif" alt="News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/AV..html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=AV." rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="odd" valign="top">
+<td scope="row" class="name">BA.</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB0002634946GBGBXSET1.html" title="View detailed prices page" target="">BAE SYS.</a>
+</td>
+<td class="name">GBX</td>
+<td>553.20</td>
+<td class="red">
+-1.80<img src="/media-sme/img/icon/down.gif" alt="Down" /> </td>
+<td class="red">
+-0.32 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB0002634946GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=BA.&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/news.gif" alt="News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/BA..html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=BA." rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="even" valign="top">
+<td scope="row" class="name">BARC</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB0031348658GBGBXSET1.html" title="View detailed prices page" target="">BARCLAYS</a>
+</td>
+<td class="name">GBX</td>
+<td>149.20</td>
+<td class="green">
++4.20<img src="/media-sme/img/icon/up.gif" alt="Up" /> </td>
+<td class="green">
++2.90 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB0031348658GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=BARC&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/news.gif" alt="News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/BARC.html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=BARC" rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="odd" valign="top">
+<td scope="row" class="name">BDEV</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB0000811801GBGBXSET1.html" title="View detailed prices page" target="">BARRATT DEVEL.</a>
+</td>
+<td class="name">GBX</td>
+<td>586.80</td>
+<td class="red">
+-22.60<img src="/media-sme/img/icon/down.gif" alt="Down" /> </td>
+<td class="red">
+-3.71 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB0000811801GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=BDEV&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/news.gif" alt="News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/BDEV.html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=BDEV" rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="even" valign="top">
+<td scope="row" class="name">BKG</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB00B02L3W35GBGBXSET1.html" title="View detailed prices page" target="">BERKELEY GP.HLD</a>
+</td>
+<td class="name">GBX</td>
+<td>4,014.00</td>
+<td class="green">
++85.00<img src="/media-sme/img/icon/up.gif" alt="Up" /> </td>
+<td class="green">
++2.16 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB00B02L3W35GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=BKG&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/news.gif" alt="News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/BKG.html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=BKG" rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="odd" valign="top">
+<td scope="row" class="name">BHP</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB00BH0P3Z91GBGBXSET1.html" title="View detailed prices page" target="">BHP GROUP</a>
+</td>
+<td class="name">GBX</td>
+<td>1,696.60</td>
+<td class="green">
++32.60<img src="/media-sme/img/icon/up.gif" alt="Up" /> </td>
+<td class="green">
++1.96 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB00BH0P3Z91GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=BHP&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/news.gif" alt="News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/BHP.html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=BHP" rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="even" valign="top">
+<td scope="row" class="name">BP.</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB0007980591GBGBXSET1.html" title="View detailed prices page" target="">BP</a>
+</td>
+<td class="name">GBX</td>
+<td>502.00</td>
+<td class="red">
+-4.30<img src="/media-sme/img/icon/down.gif" alt="Down" /> </td>
+<td class="red">
+-0.85 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB0007980591GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=BP.&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/newsFlash.gif" alt="New News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/BP..html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=BP." rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="odd" valign="top">
+<td scope="row" class="name">BATS</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB0002875804GBGBXSET1.html" title="View detailed prices page" target="">BR.AMER.TOB.</a>
+</td>
+<td class="name">GBX</td>
+<td>2,810.00</td>
+<td class="red">
+-9.00<img src="/media-sme/img/icon/down.gif" alt="Down" /> </td>
+<td class="red">
+-0.32 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB0002875804GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=BATS&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/news.gif" alt="News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/BATS.html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=BATS" rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="even" valign="top">
+<td scope="row" class="name">BLND</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB0001367019GBGBXSET1.html" title="View detailed prices page" target="">BR.LAND</a>
+</td>
+<td class="name">GBX</td>
+<td>548.00</td>
+<td class="green">
++6.60<img src="/media-sme/img/icon/up.gif" alt="Up" /> </td>
+<td class="green">
++1.22 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB0001367019GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=BLND&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/news.gif" alt="News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/BLND.html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=BLND" rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="odd" valign="top">
+<td scope="row" class="name">BT.A</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB0030913577GBGBXSET1.html" title="View detailed prices page" target="">BT GROUP</a>
+</td>
+<td class="name">GBX</td>
+<td>184.86</td>
+<td class="green">
++6.88<img src="/media-sme/img/icon/up.gif" alt="Up" /> </td>
+<td class="green">
++3.87 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB0030913577GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=BT.A&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/news.gif" alt="News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/BT.A.html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=BT.A" rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+<tr class="even" valign="top">
+<td scope="row" class="name">BNZL</td>
+<td class="name">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary/GB00B0744B38GBGBXSET1.html" title="View detailed prices page" target="">BUNZL</a>
+</td>
+<td class="name">GBX</td>
+<td>1,987.00</td>
+<td class="red">
+-1.00<img src="/media-sme/img/icon/down.gif" alt="Down" /> </td>
+<td class="red">
+-0.05 </td>
+<td class="icon">
+<a href="/exchange/prices-and-markets/stocks/summary/company-summary-chart.html?fourWayKey=GB00B0744B38GBGBXSET1" title="View chart" target=""><img src="/media/img/icon/chart.gif" alt="Chart" border="0" /></a>
+</td>
+<td class="icon">
+<a href="/exchange/news/market-news/market-news-home.html?code=BNZL&rbDate=released&preDate=Last3Months" title="View market news stories" target="">
+<img src="/media/img/icon/news.gif" alt="News" border="0" />
+</a> </td>
+<td class="icon">
+<a title="Portfolio" style="" href="/exchange/portfolio/addToPortfolio/BNZL.html" rel="nofollow"><img align="" src="/media/img/icon/add_porfolio.gif" alt="Add to Portfolio" border="0" /></a> </td>
+<td class="icon">
+<a title="Watchlist" style="" href="/exchange/watchlist/addtowatchlist.html?key=BNZL" rel="nofollow"><img align="" src="/media/img/icon/add_to_watchlist.gif" alt="Add to Watchlist" border="0" /></a> </td>
+</tr>
+</tbody>
+</table>
+<div class="paging">
+<p class="floatsx">&nbsp;Page 1 of 6</p>
+<p class="aligndx">
+| <span class="pagingselected">1</span>
+| <a href="/exchange/prices-and-markets/stocks/indices/constituents-indices.html?index=UKX&page=2" title="Page 2">2</a>
+| <a href="/exchange/prices-and-markets/stocks/indices/constituents-indices.html?index=UKX&page=3" title="Page 3">3</a>
+| <a href="/exchange/prices-and-markets/stocks/indices/constituents-indices.html?index=UKX&page=4" title="Page 4">4</a>
+| <a href="/exchange/prices-and-markets/stocks/indices/constituents-indices.html?index=UKX&page=5" title="Page 5">5</a>
+| <a href="/exchange/prices-and-markets/stocks/indices/constituents-indices.html?index=UKX&page=6" title="Page 6">6</a>
+|
+<a href="/exchange/prices-and-markets/stocks/indices/constituents-indices.html?index=UKX&page=2" title="Next">Next</a>
+</p>
+</div>
+	<!-- //prices-and-markets/indices/mediainidicesconstituents -->
+
+								<br/><h2 class="right"></h2>
+						</div>
+	<!-- ********************* 2cols ********************* -->	
+	<div class="column2_2cols_big">						
+								
+								<div class="highlight_obj">
+		<div class="highlight_onlyborder">
+			<div class="highlight_onlyborder_content"><div class="width100">	<!-- /home/mediarisersfallervolume -->
+	<div class="tab_title_obj">
+<div class="tab_title_box_auto">
+	<div class="tab_title" id="tab3">
+		<div class="tab_title_int" id="tabint3">
+			<div class="tab_title_span" id="tabintspan3">
+		 		 <a href="javascript:ShowTab('ifrtab2','/media/iframe/risers.htm','tab3','tabint3','tabintspan3');HiddenTab('tab4','tabint4','tabintspan4'); HiddenTab('tab5','tabint5','tabintspan5');">Risers</a>
+		 </div>
+		</div>
+	</div> 
+</div>
+<div class="tab_title_box_auto_off">
+	<div class="tab_title_off" id="tab4">
+		<div class="tab_title_int_off" id="tabint4">
+			<div class="tab_title_span_off" id="tabintspan4">
+		 		 <a href="javascript:ShowTab('ifrtab2','/media/iframe/fallers.htm','tab4','tabint4','tabintspan4');HiddenTab('tab3','tabint3','tabintspan3'); HiddenTab('tab5','tabint5','tabintspan5');">Fallers</a>
+		 </div>
+		</div>
+	</div> 
+</div>
+<div class="tab_title_box_auto_off">
+	<div class="tab_title_off" id="tab5">
+		<div class="tab_title_int_off" id="tabint5">
+			<div class="tab_title_span_off" id="tabintspan5">
+		 		 <a href="javascript:ShowTab('ifrtab2','/media/iframe/volume.htm','tab5','tabint5','tabintspan5');HiddenTab('tab3','tabint3','tabintspan3'); HiddenTab('tab4','tabint4','tabintspan4');">Volume Leaders</a>
+		 </div>
+		</div>
+	</div> 
+</div>
+</div>
+<div class="clear"></div>
+
+<div class="tab_table" style="height:230px;">
+	<iframe id="ifrtab2" name="ifrtab2" src="/media/iframe/risers.htm" frameborder="0" class="ifrtab" height="230" scrolling="no" marginheight="10" marginwidth="10">
+		Your browser not support iframe.
+	</iframe> 
+</div>
+	<!-- //home/mediarisersfallervolume -->
+</div></div>		</div>
+	</div>
+	<br/>
+
+
+
+										
+	</div>
+
+		</div>
+	<!-- end fullcontainer -->  
+	</div>
+	<!-- end fullcontainerBox --> 
+
+ 	<!-- start footer -->
+	<div id="footerBox">
+	
+	<!--  ********************* 2rows ********************* -->		<div class="row2_index">
+			<div class="adv-footer">			</div>
+		</div>
+		
+	<div class="footer"> 
+		<!-- start footer-container -->
+ 		<div id="footerContainer">
+			<div class="footer-line"><img src="/media/img/void.gif" width="1" height="1" alt="space"/></div>						<div class="boxContenitore1"><span class="footerTitolo">Prices</span><br/><br class="brh5"/> <a href="/exchange/prices-and-markets/stocks/indices/ftse-indices.html">Indices</a><br>
+<a href="/prices-and-markets/international-markets/markets/markets-home.htm">International Markets</a><br>
+<a href="/exchange/prices-and-markets/stocks/prices-search/stock-prices-search.html">Stocks search</a><br>
+<a href="/prices-and-markets/stocks/tools-and-services/portfolio/portfolio.htm">Portfolio</a><br>
+<a href="/prices-and-markets/stocks/tools-and-services/email-alerts/email-alerts.htm">Alert</a></div>
+						<div class="boxContenitore1"><span class="footerTitolo">News and events</span><br/><br class="brh5"/> <a href="/exchange/news/market-news/market-news-home.html">Market news</a><br></div>
+						<div class="boxContenitore1"><span class="footerTitolo">Our markets</span><br/><br class="brh5"/> <p><a href="/companies-and-advisors/main-market/main-market/home.htm">Main Market</a><br>
+<a href="/companies-and-advisors/aim/aim/aim.htm">AIM</a><br>
+<a href="/companies-and-advisors/psm/home/psm.htm">PSM</a><br>
+<a href="/products-and-services/trading-services/trading-services.htm">Trading Services</a><br>
+<a href="/companies-and-advisors/listing/thinkingoflisting.htm">Thinking of joining</a><br>
+<a href="/traders-and-brokers/membership/membership.htm">Membership</a><br>
+<a href="/traders-and-brokers/rules-regulations/rules-regulations.htm">Rules and regulation</a></p></div>
+						<div class="boxContenitore1"><span class="footerTitolo">Tools and services</span><br/><br class="brh5"/> <a href="/prices-and-markets/stocks/tools-and-services/portfolio/portfolio.htm">Portfolio</a><br>
+<a href="/prices-and-markets/stocks/tools-and-services/email-alerts/email-alerts.htm">Email Alerts</a><br>
+<a href="/exchange/prices-and-markets/stocks/tools-and-services/company-profile/company-profile.html">Company Profile</a><br>
+<a href="/exchange/prices-and-markets/stocks/tools-and-services/find-a-broker/locate-a-broker-search.html">Locate a broker</a></div>
+						<div class="boxContenitore1"><span class="footerTitolo">About us</span><br/><br class="brh5"/> <a href="http://www.lseg.com/about-london-stock-exchange-group" target="_blank">Company overview</a><br>
+<a href="http://www.lseg.com/" target="_blank">Group site</a><br>
+<a href="http://www.lseg.com/investor-relations" target="_blank">Investor relations</a><br>
+<a href="http://www.lseg.com/media-centre" target="_blank">Press office</a><br>
+<a href="http://www.lseg.com/careers">Careers</a><br>
+<a href="http://www.lseg.com/eventsandstudios" target="_blank">Events&#160;& Studios</a><br>
+<a href="http://www.lseg.com/academy-en" target="_blank">Academy Training</a><br>
+<a href="http://www.lseg.com/areas-expertise/our-markets/london-stock-exchange/equities-markets/trading-services/business-days" target="_blank">Business days</a></div>
+						<div class="boxContent-last"><span class="footerTitolo">More</span><br/><br class="brh5"/> <a href="/global/map.htm">Sitemap</a><br>
+<a href="/exchange/global/contact-us/contact-us.html">Contact us</a><br>
+<a href="/global/legal/disclaimer.htm">Disclaimer</a><br>
+<a href="/global/legal/privacy-policy.htm">Privacy and Cookies Policy</a><br>
+<a href="/home/bribery-act-external.htm">UK Bribery Act</a><br>
+<a href="/home/conflictsofinterestpolicy.htm">Conflicts of Interest Policy</a><br>
+<a href="/modern-slavery-statement.pdf">Modern Slavery Statement</a><br>
+<a href="/modern-slavery-statement.pdf">FAQs</a></div>
+						<div class="clear" style="height:10px;"></div>
+						<!-- copyright -->
+						<div class="copyright">&#169; 2019 London Stock Exchange plc. All rights reserved<!--(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-57095763-1', 'auto'); ga('send', 'pageview'); --></div>
+												 			<div class="clear"></div>
+		</div>
+		<!-- end footer-container -->
+	</div></div>
+	<!-- end footer -->
+	
+	</div>
+	<!-- end container-page -->
+ </div>
+ <!-- end container -->
+
+
+	<script type="text/javascript">
+		jQuery(document)
+			.on('mouseenter', '.box_footer', function() { jQuery(this).addClass('box_footer_hover'); })
+			.on('mouseleave', '.box_footer', function() { jQuery(this).removeClass('box_footer_hover'); })
+			.on('mouseenter', '.box_footer_arrow', function() { jQuery(this).addClass('box_footer_arrow_hover'); })
+			.on('mouseleave', '.box_footer_arrow', function() { jQuery(this).removeClass('box_footer_arrow_hover'); });
+	</script>
+			<!-- External Link: Open dialog and redirect external link -->
+		<script type="text/javascript">
+		function loadExtLinkDialog(extUrl){
+			window.open(extUrl, '_blank');
+			jQuery("#dialog-modal").dialog('close');
+			return false;
+		}
+
+		function loadExtLinkDialogreport(extUrl){
+			window.open(extUrl, '_blank');
+			jQuery("#dialog-modal-report").dialog('close');
+			return false;
+		}
+			
+		jQuery(document).ready(function() {
+			jQuery("#dialog-modal").dialog({
+				bgiframe:true,
+				autoOpen: false,
+				height: 250,
+				width: 500,
+				modal: { backgroundColor: "#000", opacity: 0.5 }
+			});
+			
+			jQuery("#dialog-modal-report").dialog({
+				bgiframe:true,
+				autoOpen: false,
+				height: 300,
+				width: 500,
+				modal: { backgroundColor: "#000", opacity: 0.5 }
+			});
+		
+		
+			jQuery("a[name='openerextlink']").each(function(){
+				jQuery(this).on( 'click', function() {
+					jQuery("#dialog-modal").dialog('open');
+					setTimeout("loadExtLinkDialog('"+this.href+"')", 5000);
+					return false;
+				});
+			});	
+
+			jQuery("a[name='openerextlinkreport']").each(function(){
+				jQuery(this).on( 'click', function() {
+					jQuery("#dialog-modal-report").dialog('open');
+					setTimeout("loadExtLinkDialogreport('"+this.href+"')", 5000);
+					return false;
+				});
+			});	
+		});			
+		</script>
+		<div class="demo">
+		<div title="NOTICE: You are now leaving our website" id="dialog-modal">
+			<p>The Exchange accepts no responsibility for the content of the website you are now accessing or for any 
+			reliance placed by you or any person on the information contained on it.</p>
+			<p>By allowing this link the Exchange does not intend in any country, directly or indirectly, to solicit 
+			business or offer any securities to any person.</p>
+			<p style="text-align:center;"><b>You will be redirected in five seconds.</b></p>
+		</div></div>
+		
+		<div class="demo">
+		<div title="NOTICE: You are now leaving our website" id="dialog-modal-report">
+			<p>You are accessing the London Stock Exchange Annual Report Service powered by PrecisionIR.</p>
+			<p>The Exchange accepts no responsibility for the content of the reports you are now accessing or for any reliance placed by you 
+			or any person on the information contained therein.</p>
+			<p>By allowing this link the Exchange does not intend in any country, directly or indirectly, to solicit business or offer any 
+			securities to any person.</p>
+			<p style="text-align:center;"><b>You will be redirected in five seconds</b></p>
+		</div></div>
+
+		
+	
+
+
+
+</body>
+</html>
+
+	
