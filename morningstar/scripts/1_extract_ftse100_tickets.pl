@@ -1,4 +1,4 @@
-# perl extract_ftse100_tickets.pl > extract_ftse100_tickets
+# perl 1_extract_ftse100_tickets.pl > extract_ftse100_tickets
 # -*- coding: utf-8 -*-
 # perl
 
