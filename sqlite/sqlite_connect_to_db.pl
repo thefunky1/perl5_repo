@@ -1,5 +1,6 @@
 # will connect to a db
 # will create db if it does not exist and has enough authorization
+# does not delete existing database or schemas
 #!/usr/bin/perl
 
 use DBI;
@@ -14,3 +15,5 @@ my $dbh = DBI->connect($dsn, $userid, $password, { RaiseError => 1 })
    or die $DBI::errstr;
 
 print "Opened database successfully\n";
+
+$dbh->disconnect();
