@@ -13,15 +13,29 @@ my $password = "asd";
 
 my $db = new DB::sqlite($driver, $database, $userid, $password);
 #  insert record
-$db->insert({
+# $db->insert({
+#    table => "COMPANY",
+#    fields => {
+#       id       => 5,
+#       name     => "Rodrick",
+#       age      => 49,
+#       address  => "California",
+#       salary   => "15999.00",
+#    },
+# });
+
+#  update record
+$db->update({
    table => "COMPANY",
    fields => {
+      name     => "Rodrick_updated",
+      age      => 50,
+   },
+   keys => {
       id       => 5,
-      name     => "Rodrick",
-      age      => 49,
-      address  => "California",
       salary   => "15999.00",
    },
 });
+
 
 exit;
