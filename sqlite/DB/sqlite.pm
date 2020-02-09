@@ -135,7 +135,71 @@ sub create {
 
 sub select {
    my ($self, $hr_params) = @_;
-   return;
+   my $s_table_name  = $hr_params->{table};
+   my $ar_columns    = $hr_params->{columns};
+   my $hr_where      = $hr_params->{where};
+
+   
+   use Data::Dumper;
+   print Dumper $s_table_name . "\n";
+   print Dumper @$ar_columns  . "\n";
+   print Dumper $hr_where . "\n";
+
+   $self->connect();
+   # my $stmt = qq(SELECT column1, column2, columnN FROM table_name; ));
+   # my $stmt = qq(SELECT * FROM COMPANY; ));
+   # my $stmt = qq(SELECT sql FROM sqlite_master WHERE type = 'table' AND tbl_name = 'COMPANY'; ));
+   my $s_columns;
+   if ( $ar_columns ) {
+      my $i_count = 0;
+      for my $s_column ( $ar_columns ) {
+         # first column
+         if ( $i_count == 0 ) {
+            $s_columns = $s_column;
+            $i_count++;
+            next;
+         }
+         $s_columns .= ", " . $s_column;
+      }
+   } else {
+      $s_columns = "*";
+   }
+   my $s_statement = "SELECT " . uc $s_columns . " FROM " . uc $s_table_name;
+   if ( $hr_where ) {
+      my $i_count = 0;
+      for my $s_column ( keys %$hr_where ){
+         if ( $i_count == 0 ) {
+            my $s_statement .= " WHERE " . $s_column . " = '" . $hr_where->{$s_column} . "'";
+            $i_count++;
+            next;
+         }
+         $s_statement .= " AND " . $s_column . " = '" . $hr_where->{$s_column} . "'";
+      }
+   }
+   print $s_statement . "\n";
+   my $sth = $self->{dbh}->prepare( $s_statement );
+   my $rv = $sth->execute() or die $DBI::errstr;
+   if($rv < 0) {
+      print $DBI::errstr;
+   }
+   # use DDP;
+   my %h_result;
+   my $i_count = 0;
+   while(my @row = $sth->fetchrow_array()) {
+      # p @row;
+
+      # print "ID = ". $row[0] . "\n";
+      # print "NAME = ". $row[1] ."\n";
+      # print "ADDRESS = ". $row[2] ."\n";
+      # print "SALARY =  ". $row[3] ."\n\n";
+      $h_result{$i_count} = \@row; # add array as hash reference
+      $i_count++;
+   }
+
+   # my @row = $sth->fetchrow_array();
+   $self->disconnect();
+
+   return %h_result;
 }
 
 sub _dbh {
